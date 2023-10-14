@@ -835,6 +835,8 @@ section {
   font-size: 28px;
   display: inline-block;
   transition: 0.3s;
+  width: 150px;
+  height: 150px;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
