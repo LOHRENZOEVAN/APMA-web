@@ -1,0 +1,83 @@
+/* Basic Styling */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  text-align: center; 
+}
+
+header, main, footer, section {
+  text-align: center; 
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #333; 
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+/* Image Styling */
+img {
+  max-width: 30%; 
+  height: auto;  
+  margin: 10px auto; 
+  display: block;  
+}
+
+/* Carousel */
+.carousel {
+  display: flex; 
+  overflow-x: auto; 
+  scroll-snap-type: x mandatory; 
+}
+
+.carousel img {
+  width: 100%; 
+  height: auto; 
+  scroll-snap-align: start; 
+  margin-right: 10px;
+}
+
+/* Call to Action Button */
+#download-btn {
+  background-color: #4CAF50; 
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; 
+  margin: 0 auto; 
+}
+
+#download-btn:hover {
+  background-color: #3e8e41; 
+}
+
+/* Paragraph Styling */
+p {
+  background-color: white; 
+  padding: 20px;
+  border-radius: 8px;       
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px;
+}
+
+
+/* Second Heading Styling */
+h2 {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 10px 20px; /* Add padding */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
