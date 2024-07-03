@@ -21,8 +21,9 @@ section {
   margin-bottom: 30px;
 }
 
-/* Image Styling */
-main img { 
+
+/* All Images Styling (Header + Main) */ 
+img { 
   max-width: 45%; /* Slightly larger */
   height: auto;
   margin: 15px auto; /* More margin for better spacing */
@@ -30,19 +31,35 @@ main img {
   border-radius: 10px; /* Rounded corners */
 }
 
+/* ... (Your other styles) */
+
 /* Carousel */
 .carousel {
-  display: flex; 
-  overflow-x: auto; 
-  scroll-snap-type: x mandatory; 
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  max-width: 100%; /* Ensure carousel doesn't exceed screen width */
 }
 
+/* Carousel Images */
 .carousel img {
-  width: 100%; 
-  height: auto; 
-  scroll-snap-align: start; 
-  margin-right: 10px;
+  width: calc(100% / 3); /* Adjust as needed for number of images */
+  height: auto;
+  scroll-snap-align: start;
+  margin-right: 5px; /* Reduce margin for smaller screens */
+  object-fit: cover; /* Optionally, ensure image covers the area without distortion */
 }
+
+
+/* All Images Styling (Header + Main) */ 
+img { 
+  max-width: 45%; /* Slightly larger */
+  height: auto;
+  margin: 15px auto; /* More margin for better spacing */
+  display: block;
+  border-radius: 10px; /* Rounded corners */
+}
+
 
 /* Call to Action Button */
 #download-btn {
@@ -80,5 +97,13 @@ h2 {
   padding: 10px 20px; /* Add padding */
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) { 
+  .carousel img {
+      width: 100%; /* One image per screen on smaller devices */
+      margin-right: 0; /* Remove margin between images */
+  }
 }
 
