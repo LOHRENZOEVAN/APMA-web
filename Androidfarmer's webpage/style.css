@@ -89,6 +89,45 @@ p {
   margin-bottom: 20px;
 }
 
+/* ... (Your other styles) */
+/* ... (Other styles) ... */
+
+/* Pricing Tier Styling */
+/* ... (Your other styles) */
+
+/* Pricing Tier Styling */
+.pricing-tiers {
+  display: flex;
+  justify-content: center; /* Center the tiers */
+  gap: 10px;  /* Adjust this value to control spacing */
+  margin-bottom: 30px; 
+  flex-wrap: wrap; 
+}
+
+/* ... (Rest of your styles) ... */
+
+.tier {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center content within each tier */
+}
+
+.tier h3 {
+  color: #333;
+}
+
+/* Remove bullets and center text in lists */
+.tier ul {
+  list-style: none; /* Remove bullets */
+  padding: 0;       /* Remove default padding */
+  text-align: center; /* Center list items */
+}
+
+/* ... (Rest of your styles) ... */
+
+
 
 /* Second Heading Styling */
 h2 {
@@ -107,3 +146,67 @@ h2 {
   }
 }
 
+/* ... (Your other styles) */
+
+/* Call to Action Button */
+#downloadButton {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 auto; 
+}
+
+#downloadButton:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+}
+
+
+/* ... (Rest of your styles) ... */
+/* ... (Your other styles) */
+
+/* Pricing Tier Styling */
+.pricing-tiers {
+  display: flex;
+  justify-content: center; 
+  gap: 10px;  
+  margin-bottom: 30px; 
+  flex-wrap: wrap; 
+}
+
+.tier {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+  flex: 1 1 250px; 
+}
+
+.tier h3 {
+  color: #333;
+}
+
+/* Remove bullets and center text in lists */
+.tier ul {
+  list-style: none; 
+  padding: 0;       
+  text-align: center;
+}
+
+/* Style Premium Tiers */
+.tier:nth-child(2) p:last-child, /* Premium Monthly Price */
+.tier:nth-child(3) p:last-child { /* Premium Yearly Price */
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 5px 10px; /* Optional: add padding for better visibility */
+  border-radius: 5px;
+}
+
+/* ... (Rest of your styles) ... */
