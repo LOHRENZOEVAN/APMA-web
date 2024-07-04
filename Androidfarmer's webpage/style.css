@@ -1,156 +1,114 @@
-/* Basic Styling */
+/* General Styles */
 body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   background-color: #f4f4f4;
-  text-align: center; 
+  text-align: center;
 }
 
+/* Section Styles */
 header, main, footer, section {
-  text-align: center; 
   padding: 20px;
 }
 
+/* Heading Styles */
 h1, h2, h3 {
-  color: #333; 
+  color: #333; /* Dark gray */
 }
 
-section {
-  margin-bottom: 30px;
+h2 {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 
-/* All Images Styling (Header + Main) */ 
-img { 
-  max-width: 45%; /* Slightly larger */
+/* Image Styles */
+img {
+  max-width: 85%;
   height: auto;
-  margin: 15px auto; /* More margin for better spacing */
+  margin: 15px auto;
   display: block;
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 10px; 
 }
 
-/* ... (Your other styles) */
 
-/* Carousel */
+/* Carousel Styles */
 .carousel {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  max-width: 100%; /* Ensure carousel doesn't exceed screen width */
+  max-width: 100%; 
 }
 
-/* Carousel Images */
 .carousel img {
-  width: calc(100% / 3); /* Adjust as needed for number of images */
+  width: calc(100% / 3); 
   height: auto;
   scroll-snap-align: start;
-  margin-right: 5px; /* Reduce margin for smaller screens */
-  object-fit: cover; /* Optionally, ensure image covers the area without distortion */
+  margin-right: 5px; 
+  object-fit: cover; 
 }
 
-
-/* All Images Styling (Header + Main) */ 
-img { 
-  max-width: 45%; /* Slightly larger */
-  height: auto;
-  margin: 15px auto; /* More margin for better spacing */
-  display: block;
-  border-radius: 10px; /* Rounded corners */
+/* Media Query for Carousel on Smaller Screens */
+@media (max-width: 768px) {
+  .carousel img {
+      width: 100%; 
+      margin-right: 0;
+  }
 }
 
-
-/* Call to Action Button */
-#download-btn {
-  background-color: #4CAF50; 
-  color: white;
-  padding: 15px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px; 
-  margin: 0 auto; 
-}
-
-#download-btn:hover {
-  background-color: #3e8e41; 
-}
-
-/* Paragraph Styling */
+/* Paragraph Styles */
 p {
-  background-color: white; 
+  background-color: white;
   padding: 20px;
-  border-radius: 8px;       
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 
-/* ... (Your other styles) */
-/* ... (Other styles) ... */
 
-/* Pricing Tier Styling */
-/* ... (Your other styles) */
 
-/* Pricing Tier Styling */
+/* Pricing Tier Styles */
 .pricing-tiers {
   display: flex;
-  justify-content: center; /* Center the tiers */
-  gap: 10px;  /* Adjust this value to control spacing */
-  margin-bottom: 30px; 
-  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
-
-/* ... (Rest of your styles) ... */
 
 .tier {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Center content within each tier */
+  text-align: center;
+  flex: 1 1 250px; /* Flexible sizing with min-width */
 }
 
-.tier h3 {
-  color: #333;
-}
-
-/* Remove bullets and center text in lists */
 .tier ul {
-  list-style: none; /* Remove bullets */
-  padding: 0;       /* Remove default padding */
-  text-align: center; /* Center list items */
+  list-style: none;
+  padding: 0;
+  text-align: center;
 }
 
-/* ... (Rest of your styles) ... */
-
-
-
-/* Second Heading Styling */
-h2 {
-  background-color: #4CAF50; /* Green background */
+/* Style Premium Tiers */
+.tier:nth-child(2) p:last-child, 
+.tier:nth-child(3) p:last-child {
+  background-color: #4CAF50; 
   color: white;
-  padding: 10px 20px; /* Add padding */
+  padding: 5px 10px; 
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
-/* Media Query for Smaller Screens */
-@media (max-width: 768px) { 
-  .carousel img {
-      width: 100%; /* One image per screen on smaller devices */
-      margin-right: 0; /* Remove margin between images */
-  }
-}
-
-/* ... (Your other styles) */
 
 /* Call to Action Button */
 #downloadButton {
-  background-color: #4CAF50; /* Green color */
+  background-color: #4CAF50; 
   color: white;
   padding: 15px 30px;
   text-align: center;
@@ -164,49 +122,6 @@ h2 {
 }
 
 #downloadButton:hover {
-  background-color: #3e8e41; /* Darker green on hover */
+  background-color: #3e8e41; 
 }
 
-
-/* ... (Rest of your styles) ... */
-/* ... (Your other styles) */
-
-/* Pricing Tier Styling */
-.pricing-tiers {
-  display: flex;
-  justify-content: center; 
-  gap: 10px;  
-  margin-bottom: 30px; 
-  flex-wrap: wrap; 
-}
-
-.tier {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center; 
-  flex: 1 1 250px; 
-}
-
-.tier h3 {
-  color: #333;
-}
-
-/* Remove bullets and center text in lists */
-.tier ul {
-  list-style: none; 
-  padding: 0;       
-  text-align: center;
-}
-
-/* Style Premium Tiers */
-.tier:nth-child(2) p:last-child, /* Premium Monthly Price */
-.tier:nth-child(3) p:last-child { /* Premium Yearly Price */
-  background-color: #4CAF50; /* Green background */
-  color: white;
-  padding: 5px 10px; /* Optional: add padding for better visibility */
-  border-radius: 5px;
-}
-
-/* ... (Rest of your styles) ... */
