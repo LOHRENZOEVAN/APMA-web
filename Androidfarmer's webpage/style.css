@@ -125,3 +125,27 @@ p {
   background-color: #3e8e41; 
 }
 
+/* ... (Your other styles) */
+/* ... (Other styles) ... */
+/* Reviews Section */
+.reviews-section {
+  margin-top: 20px; /* Add space above the reviews */
+}
+
+.review-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* Snapping for smooth scrolling */
+}
+
+.review {
+  min-width: 280px; /* Adjust for desired width */
+  padding: 20px;
+  margin-right: 15px; /* Spacing between reviews */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+}
+
+
