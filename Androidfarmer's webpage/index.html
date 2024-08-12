@@ -1,27 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APMA</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensure the body and html take up the full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main content area takes up the remaining space */
+        main {
+            flex: 1;
+        }
+
+        /* Footer is at the bottom */
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* Styling for the nav button */
+        .nav-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Hide the nav menu by default */
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 999;
+        }
+
+        .nav-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu ul li {
+            margin-bottom: 10px;
+        }
+
+        .nav-menu ul li a {
+            text-decoration: none;
+            color: lightgreen; /* Set menu items to light green */
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .nav-menu ul li a:hover {
+            background-color: #575757;
+        }
+
+        /* Simple media query for larger screens */
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex !important; /* Ensure menu is visible on larger screens */
+                position: static;
+                background-color: transparent;
+                flex-direction: row;
+                justify-content: flex-end;
+                padding: 0;
+                border-radius: 0;
+            }
+
+            .nav-button {
+                display: none;
+            }
+
+            .nav-menu ul {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .nav-menu ul li {
+                margin: 0 15px;
+            }
+
+            .nav-menu ul li a {
+                padding: 14px 20px;
+            }
+        }
+    </style>
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
 
         // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-        apiKey: "AIzaSyDkZoLtNMdI4pCTjkyCSEG7j-BCXJRrfcg",
-        authDomain: "apma---web.firebaseapp.com",
-        projectId: "apma---web",
-        storageBucket: "apma---web.appspot.com",
-        messagingSenderId: "1071652748269",
-        appId: "1:1071652748269:web:36d9410fa81c6fe1e645e4",
-        measurementId: "G-WCYZHGYB12"
+            apiKey: "AIzaSyDkZoLtNMdI4pCTjkyCSEG7j-BCXJRrfcg",
+            authDomain: "apma---web.firebaseapp.com",
+            projectId: "apma---web",
+            storageBucket: "apma---web.appspot.com",
+            messagingSenderId: "1071652748269",
+            appId: "1:1071652748269:web:36d9410fa81c6fe1e645e4",
+            measurementId: "G-WCYZHGYB12"
         };
 
         // Initialize Firebase
@@ -32,6 +128,14 @@
 
 <body>
     <header>
+        <button class="nav-button" onclick="toggleNav()">Menu</button>
+        <div class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="https://docs.google.com/document/d/1cmydyeSsgzkZciCw87umNb4aE4lF-eSRQxaNCSr5FYY/edit?usp=sharing">Privacy Policy</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
         <h1>Revolutionize Your Animal Farming with Artificial Intelligence</h1>
         <h2>Boost productivity and efficiency with our AI-powered mobile app APMA, trusted by more than 1000 farmers across Sub-saharan Africa.</h2>
         <img src="images/header apma.jpg" alt="a farm with a farmer and a cow">
@@ -46,10 +150,10 @@
                     <p>"The AI-powered disease detection feature is amazing. It saved my goat from a serious outbreak. Thank you, APMA!" - Hans Berinyuy, Farmer</p>
                 </div>
                 <div class="review">
-                    <p>"This app is so easy to use, even for someone like me who isn't very tech-savvy. It has a goldmine of information." - Dingana frederick, Farmer</p>
+                    <p>"This app is so easy to use, even for someone like me who isn't very tech-savvy. It has a goldmine of information." - Dingana Frederick, Farmer</p>
                 </div>
                 <div class="review">
-                    <p>"I've increased my profits significantly since using APMA. i no longer lose much of my birds as i follow the advice" - Sarah Mbong, Farmer</p>
+                    <p>"I've increased my profits significantly since using APMA. I no longer lose much of my birds as I follow the advice" - Sarah Mbong, Farmer</p>
                 </div>
                 <div class="review">
                     <p>"APMA is a must-have for any serious animal farmer. It's like having a team of experts in my pocket for emergency!" - David Emeka, Farmer</p>
@@ -57,7 +161,8 @@
             </div>
         </div>
     </header>
-    <div class="download-options"> 
+
+    <div class="download-options">
         <a id="playstore-link" href="https://play.google.com/store/apps/details?id=com.wwlagroconsulting.apma">
             <img src="images/playstore.jpg" alt="Get it on Google Play">
         </a>
@@ -69,9 +174,10 @@
     <main>
         <section id="ceo-word">
             <h3>Word from the Founder</h3>
-            <p>APMA was designed to solve various problems I faced as a young man running my own animal farm early in life, and I decided to share this solution with Small-holder farmers across Sub-saharan Africa. Nkwi Loh is a 2 time founder with over 7 years experience in Agriculture.</p>
+            <p>APMA was designed to solve various problems I faced as a young man running my own animal farm early in life, and I decided to share this solution with small-holder farmers across Sub-saharan Africa. Nkwi Loh is a 2-time founder with over 7 years of experience in agriculture.</p>
             <img src="images/1W7A7093.JPG" alt="Founder">
         </section>
+
         <section id="products">
             <h3>Our Products</h3>
             <p>Our app offers a suite of innovative features tailored to the needs of animal farmers. From real-time data analysis to personalized recommendations, our AI-driven tools are crafted to enhance your farming practices and boost your bottom line.</p>
@@ -83,56 +189,68 @@
 
             <div class="carousel">
                 <img src="images/unnamed2.jpg" alt="Image 1">
-                <img src="images/unnamed3.jpg" alt="Image 2"> 
+                <img src="images/unnamed3.jpg" alt="Image 2">
                 <img src="images/unnamed4.jpg" alt="Image 3">
+            </div>
+        </section>
+
+        <section id="pricing">
+            <h3>Pricing</h3>
+            <div class="pricing-tiers">
+                <div class="tier">
+                    <h3>Freemium</h3>
+                    <p>Features:</p>
+                    <ul>
+                        <li>5 AI disease scans</li>
+                        <li>5 calculations</li>
+                        <li>Unlimited market search</li>
+                    </ul>
+                    <p>Price: free</p>
+                </div>
+
+                <div class="tier">
+                    <h3>Basic</h3>
+                    <p>Features:</p>
+                    <ul>
+                        <li>Unlimited AI scans</li>
+                        <li>Unlimited calculations</li>
+                        <li>Unlimited reporting</li>
+                    </ul>
+                    <p>Price: $5/month</p>
+                </div>
+
+                <div class="tier">
+                    <h3>Premium</h3>
+                    <p>Features:</p>
+                    <ul>
+                        <li>Unlimited AI scans</li>
+                        <li>Unlimited calculations</li>
+                        <li>Unlimited reporting</li>
+                        <li>Unlimited market</li>
+                    </ul>
+                    <p>Price: $50/year</p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="pricing-tiers">
-            <div class="tier">
-                <h3>Freemium</h3>
-                <p>Features:</p>
-                <ul>
-                    <li>5 AI disease scans</li>
-                    <li>5 calculations</li>
-                    <li>Unlimited market search</li>
-                </ul>
-                <p>Price: free</p>
-            </div>
-            <div class="tier">
-                <h3>Basic </h3>
-                <p>Features:</p>
-                <ul>
-                    <li>Unlimited AI scans</li>
-                    <li>Unlimited calculations</li>
-                    <li>Unlimited reporting</li>
-                </ul>
-                <p>Price: $5/month</p>
-            </div>
-            <div class="tier">
-                <h3>Premium</h3>
-                <p>Features:</p>
-                <ul>
-                    <li>Unlimited AI scans</li>
-                    <li>Unlimited calculations</li>
-                    <li>Unlimited reporting</li>
-                    <li>Unlimited market</li>
-                </ul>
-                <p>Price: $50/year</p>
-            </div>
-        </div>
-
-        <div class="download-options"> 
-            <a id="playstore-link" href="https://play.google.com/store/apps/details?id=com.wwlagroconsulting.apma">
-                <img src="images/playstore.jpg" alt="Get it on Google Play">
-            </a>
-            <a id="download-link" href="https://play.google.com/store/apps/details?id=com.wwlagroconsulting.apma">
-                <button id="downloadButton">Get on playstore</button>
-            </a>
+        <div class="footer-links">
+            <a href="https://docs.google.com/document/d/1cmydyeSsgzkZciCw87umNb4aE4lF-eSRQxaNCSr5FYY/edit?usp=sharing">Privacy Policy</a> |
+            <a href="mailto:wwlagroconsulting@gmail.com">Email Us</a>
         </div>
     </footer>
 
-    <script src="script.js"></script> </body>
+    <script>
+        function toggleNav() {
+            const navMenu = document.getElementById('nav-menu');
+            if (navMenu.style.display === 'block') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
 </html>
