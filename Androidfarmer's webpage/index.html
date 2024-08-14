@@ -6,110 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APMA</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Ensure the body and html take up the full height */
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Main content area takes up the remaining space */
-        main {
-            flex: 1;
-        }
-
-        /* Footer is at the bottom */
-        footer {
-            background-color: #f1f1f1;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-
-        /* Styling for the nav button */
-        .nav-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            z-index: 1000;
-        }
-
-        /* Hide the nav menu by default */
-        .nav-menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 999;
-        }
-
-        .nav-menu ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-menu ul li {
-            margin-bottom: 10px;
-        }
-
-        .nav-menu ul li a {
-            text-decoration: none;
-            color: lightgreen; /* Set menu items to light green */
-            padding: 10px 20px;
-            display: block;
-        }
-
-        .nav-menu ul li a:hover {
-            background-color: #575757;
-        }
-
-        /* Simple media query for larger screens */
-        @media (min-width: 768px) {
-            .nav-menu {
-                display: flex !important; /* Ensure menu is visible on larger screens */
-                position: static;
-                background-color: transparent;
-                flex-direction: row;
-                justify-content: flex-end;
-                padding: 0;
-                border-radius: 0;
-            }
-
-            .nav-button {
-                display: none;
-            }
-
-            .nav-menu ul {
-                display: flex;
-                justify-content: flex-end;
-            }
-
-            .nav-menu ul li {
-                margin: 0 15px;
-            }
-
-            .nav-menu ul li a {
-                padding: 14px 20px;
-            }
-        }
-    </style>
     <script type="module">
-        // Import the functions you need from the SDKs you need
+        // Firebase initialization (unchanged)
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
-        // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyDkZoLtNMdI4pCTjkyCSEG7j-BCXJRrfcg",
             authDomain: "apma---web.firebaseapp.com",
@@ -120,7 +21,6 @@
             measurementId: "G-WCYZHGYB12"
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
     </script>
@@ -133,7 +33,7 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="https://docs.google.com/document/d/1cmydyeSsgzkZciCw87umNb4aE4lF-eSRQxaNCSr5FYY/edit?usp=sharing">Privacy Policy</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="mailto:wwlagroconsulting@gmail.com">Contact Us</a></li>
             </ul>
         </div>
         <h1>Revolutionize Your Animal Farming with Artificial Intelligence</h1>
@@ -172,10 +72,10 @@
     </div>
 
     <main>
-        <section id="ceo-word">
-            <h3>Word from the Founder</h3>
-            <p>APMA was designed to solve various problems I faced as a young man running my own animal farm early in life, and I decided to share this solution with small-holder farmers across Sub-saharan Africa. Nkwi Loh is a 2-time founder with over 7 years of experience in agriculture.</p>
-            <img src="images/1W7A7093.JPG" alt="Founder">
+        <section id="Problem">
+            <h3>Problem</h3>
+            <p>Recurring animal disease outbreaks caused significant economic losses of up to $200 million in the past 10 years in Africa, trade disruptions, and threats to global food security. Smallholder animal farmers in Africa, with already fragile systems, were disproportionately affected by these outbreaks. Targeted interventions are crucial to manage and mitigate the impact of livestock diseases, particularly focusing on prevalent diseases like Avian Influenza, Foot and Mouth Disease, and African Swine Fever.</p>
+            <img src="images/problem photo.jpg" alt="problem">
         </section>
 
         <section id="products">
@@ -184,8 +84,8 @@
         </section>
 
         <section id="resources">
-            <h3>Value</h3>
-            <p>Access a wealth of resources at your fingertips. Our comprehensive library includes guides, information, and best practices to help you get the most out of your farm operations. Stay informed and stay ahead with the latest in AI technology for animal farming.</p>
+            <h3>What you get </h3>
+            <p>You have a digital animal expert in your pocket who helps you immediately you have problems. Access a wealth of resources at your fingertips. Our comprehensive library includes guides, information, and best practices to help you get the most out of your farm operations. Stay informed and stay ahead with the latest in AI technology for animal farming.</p>
 
             <div class="carousel">
                 <img src="images/unnamed2.jpg" alt="Image 1">
@@ -244,11 +144,7 @@
     <script>
         function toggleNav() {
             const navMenu = document.getElementById('nav-menu');
-            if (navMenu.style.display === 'block') {
-                navMenu.style.display = 'none';
-            } else {
-                navMenu.style.display = 'block';
-            }
+            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
