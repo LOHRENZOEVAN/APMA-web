@@ -18,6 +18,15 @@ h1, h2, h3 {
   color: #333; /* Dark gray */
 }
 
+h1 { /* New styles for h1 */
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: inline-block; /* To allow background and padding to take effect */
+}
+
 h2 {
   background-color: #4CAF50; /* Green background */
   color: white;
@@ -25,7 +34,6 @@ h2 {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
-
 
 /* Image Styles */
 img {
@@ -35,7 +43,6 @@ img {
   display: block;
   border-radius: 10px; 
 }
-
 
 /* Carousel Styles */
 .carousel {
@@ -56,8 +63,8 @@ img {
 /* Media Query for Carousel on Smaller Screens */
 @media (max-width: 768px) {
   .carousel img {
-      width: 100%; 
-      margin-right: 0;
+    width: 100%; 
+    margin-right: 0;
   }
 }
 
@@ -69,8 +76,6 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
-
-
 
 /* Pricing Tier Styles */
 .pricing-tiers {
@@ -105,7 +110,6 @@ p {
   border-radius: 5px;
 }
 
-
 /* Call to Action Button */
 #downloadButton {
   background-color: #4CAF50; 
@@ -125,8 +129,6 @@ p {
   background-color: #3e8e41; 
 }
 
-/* ... (Your other styles) */
-/* ... (Other styles) ... */
 /* Reviews Section */
 .reviews-section {
   margin-top: 20px; /* Add space above the reviews */
@@ -136,17 +138,20 @@ p {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory; /* Snapping for smooth scrolling */
+  flex-wrap: nowrap; /* Prevent wrapping of reviews */
 }
 
 .review {
-  min-width: 280px; /* Adjust for desired width */
+  min-width: 300px; /* Increased min-width to accommodate longer text */
   padding: 20px;
   margin-right: 15px; /* Spacing between reviews */
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: center;
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
 }
+
 /* General styles */
 html, body {
   height: 100%;
@@ -167,52 +172,54 @@ footer {
   margin-top: 20px;
 }
 
-/* Language switcher styles */
-.language-switcher {
+/* APMA Logo Styles */
+#apma-logo {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  gap: 10px;
-  z-index: 1000;
-}
-
-.language-switcher button {
+  top: 10px;
+  left: 10px; 
+  font-size: 18px;
+  font-weight: bold;
   background-color: white;
   color: black;
-  padding: 10px 20px;
+  padding: 8px 20px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.language-switcher button:hover {
+#apma-logo:hover {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-3px);
 }
 
-/* Nav button and menu styles */
+/* Navigation button styles */
 .nav-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px; 
   background-color: white;
   color: black;
-  padding: 10px 20px;
+  padding: 10px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+}
+
+.nav-button:before {
+  content: "\2630"; /* Unicode character for three dashes (≡) */
+  font-size: 24px;
 }
 
 .nav-menu {
   display: none;
   position: absolute;
-  top: 60px;
-  right: 20px;
+  top: 50px; /* Adjusted top position */
+  right: 10px; 
   background-color: white;
   padding: 10px;
   border-radius: 5px;
@@ -228,6 +235,8 @@ footer {
 
 .nav-menu ul li {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu ul li a {
@@ -244,131 +253,17 @@ footer {
   background-color: #ddd;
 }
 
-@media (min-width: 768px) {
-  .nav-menu {
-      display: flex !important;
-      position: static;
-      background-color: transparent;
-      flex-direction: row;
-      justify-content: flex-end;
-      padding: 0;
-      border-radius: 0;
-      box-shadow: none;
-  }
-
-  .nav-button {
-      display: none;
-  }
-
-  .nav-menu ul {
-      display: flex;
-      justify-content: flex-end;
-  }
-
-  .nav-menu ul li {
-      margin: 0 15px;
-      margin-bottom: 0;
-  }
-
-  .nav-menu ul li a {
-      padding: 14px 20px;
-      background-color: white;
-      color: black;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-  }
+.social-media-icons {
+  text-align: center; /* Center the icons horizontally */
+  margin-top: 20px;   /* Add some space above the icons */
 }
 
-/* Carousel styling for reviews */
-.review-carousel {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 15px;
+.social-media-icons a {
+  display: inline-block; /* Arrange icons in a line */
+  margin: 0 10px;        /* Add space between icons */
 }
 
-.review {
-  background-color: white;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  min-height: 100px;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 767px) {
-  .language-switcher {
-      left: 10px;
-  }
-
-  .nav-button {
-      right: 10px;
-  }
-
-  .nav-menu {
-      top: 60px;
-      right: 10px;
-  }
-
-  .language-switcher button {
-      padding: 8px 16px;
-  }
-}
-.review-carousel {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 15px;
-  max-width: 100%; /* Ensure the carousel does not overflow */
-}
-
-.review {
-  background-color: white;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  min-height: 100px;
-  overflow-wrap: break-word; /* Ensure long words are wrapped */
-  word-wrap: break-word; /* Older browsers */
-  word-break: break-word; /* Ensure long words break */
-  white-space: normal; /* Prevent text from overflowing */
-}
-
-.review h3 {
-  margin-top: 0;
-}
-
-.review p {
-  margin-bottom: 0;
-}
-
-/* Make sure the review carousel adapts to the height of the content */
-.review-carousel {
-  align-items: stretch; /* Ensure reviews stretch to fill the container */
-}
-
-.review {
-  flex: 1; /* Make reviews flex to fit their content */
-}
-
-.review-carousel {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 15px;
-  max-width: 100%;
-}
-
-.review {
-  background-color: white;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  min-height: 100px;
-  overflow-wrap: break-word; /* Ensure long words are wrapped */
-  word-wrap: break-word; /* Older browsers */
-  word-break: break-word; /* Ensure long words break */
-  white-space: normal; /* Prevent text from overflowing */
-  flex: 1; /* Ensure reviews take up space as needed */
-  transition: height 0.3s ease-in-out; /* Smoothly adjust height if needed */
+.social-media-icons img {
+  width: 20px;           /* Adjust icon size as needed */
+  height: 20px;
 }
