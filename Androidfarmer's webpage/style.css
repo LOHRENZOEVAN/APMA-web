@@ -24,7 +24,7 @@ h1 { /* New styles for h1 */
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  display: inline-block; /* To allow background and padding to take effect */
+  display: inline-block; 
 }
 
 h2 {
@@ -211,14 +211,14 @@ footer {
 }
 
 .nav-button:before {
-  content: "\2630"; /* Unicode character for three dashes (≡) */
+  content: "\2630"; 
   font-size: 24px;
 }
 
 .nav-menu {
   display: none;
   position: absolute;
-  top: 50px; /* Adjusted top position */
+  top: 50px; 
   right: 10px; 
   background-color: white;
   padding: 10px;
@@ -254,16 +254,16 @@ footer {
 }
 
 .social-media-icons {
-  text-align: center; /* Center the icons horizontally */
-  margin-top: 20px;   /* Add some space above the icons */
+  text-align: center; 
+  margin-top: 20px;   
 }
 
 .social-media-icons a {
-  display: inline-block; /* Arrange icons in a line */
-  margin: 0 10px;        /* Add space between icons */
+  display: inline-block; 
+  margin: 0 10px;        
 }
 
 .social-media-icons img {
-  width: 20px;           /* Adjust icon size as needed */
+  width: 20px;           
   height: 20px;
 }

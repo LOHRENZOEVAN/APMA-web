@@ -141,7 +141,14 @@
             </div>
         </section>
     </main>
-
+    <div class="download-options">
+        <a id="playstore-link" href="https://play.google.com/store/apps/details?id=com.wwlagroconsulting.apma">
+            <img src="images/playstore.jpg" alt="Get it on Google Play">
+        </a>
+        <a id="download-link" href="https://play.google.com/store/apps/details?id=com.wwlagroconsulting.apma">
+            <button id="downloadButton" data-en="Get on playstore" data-fr="Télécharger sur playstore">Purchase in the app</button>
+        </a>
+    </div>
     <footer>
         <div class="footer-links">
             <a href="https://docs.google.com/document/d/1cmydyeSsgzkZciCw87umNb4aE4lF-eSRQxaNCSr5FYY/edit?usp=sharing" data-en="Privacy Policy" data-fr="Politique de confidentialité">Privacy Policy</a> |
@@ -169,7 +176,7 @@
         }
 
         function switchLanguage(lang) {
-            if (lang !== 'en') { // Only proceed if the language is NOT 'en'
+            if (lang !== 'en') { 
                 const elements = document.querySelectorAll('[data-en]');
                 elements.forEach(element => {
                     element.textContent = element.getAttribute(`data-${lang}`);
