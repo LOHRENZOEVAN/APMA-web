@@ -143,13 +143,19 @@ p {
 
 .review {
   min-width: 300px; /* Increased min-width to accommodate longer text */
-  padding: 20px;
+  padding: 20px; /* Add some padding */
   margin-right: 15px; /* Spacing between reviews */
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: center;
   overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  word-break: break-word; /* Allow long words to break */
+}
+
+/* Specific styles for French reviews */
+[lang="fr"] .review {
+  width: calc(100% - 30px); /* Slightly reduce width to accommodate potential longer French words */
 }
 
 /* General styles */
@@ -245,25 +251,19 @@ footer {
   padding: 10px 20px;
   display: block;
   background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-}
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);} 
 
-.nav-menu ul li a:hover {
-  background-color: #ddd;
-}
-
-.social-media-icons {
-  text-align: center; 
-  margin-top: 20px;   
-}
-
-.social-media-icons a {
-  display: inline-block; 
-  margin: 0 10px;        
-}
-
-.social-media-icons img {
-  width: 20px;           
-  height: 20px;
-}
+  .social-media-icons {
+    text-align: center; 
+    margin-top: 20px;   
+  }
+  
+  .social-media-icons a {
+    display: inline-block; 
+    margin: 0 10px;        
+  }
+  
+  .social-media-icons img {
+    width: 20px;           
+    height: 20px;
+  }
